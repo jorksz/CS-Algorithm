@@ -1,4 +1,4 @@
-package com.offer.linked_list;
+package offer.linked_list;
 
 public class ListNode {
 
