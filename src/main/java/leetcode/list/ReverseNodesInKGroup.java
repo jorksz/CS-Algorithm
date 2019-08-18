@@ -39,9 +39,9 @@ public class ReverseNodesInKGroup {
             return null;
         }
 
-        ListNode dummy = new ListNode(0);
-        dummy.next = head;
-        ListNode pre = dummy;
+        ListNode duumy = new ListNode(0);
+        duumy.next = head;
+        ListNode pre = duumy;
         ListNode cur = head;
         int count = 0;
 
@@ -56,7 +56,7 @@ public class ReverseNodesInKGroup {
             cur = end;
         }
 
-        return dummy.next;
+        return duumy.next;
 
     }
 
