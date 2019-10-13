@@ -3,6 +3,11 @@ package offer.linked_list;
 import java.util.ArrayList;
 import java.util.Stack;
 
+
+/**
+ * 题目-从尾到头打印链表
+ *输入一个链表，按链表从尾到头的顺序返回一个ArrayList
+ */
 public class FromRearToHeadPrintLinkedList {
     /**
      * 合理使用递归解法
@@ -42,8 +47,5 @@ public class FromRearToHeadPrintLinkedList {
         return res;
     }
 
-    /**
-     * 直接遍历链表，用集合记录数值，最后逆置集合即可
-     */
 
 }
