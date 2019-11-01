@@ -66,7 +66,7 @@ public class MergeKSortedLists {
     /**
      * 堆排序 O(nlogn)
      */
-    public ListNode mergeKLists2(ArrayList<ListNode> lists) {
+    public ListNode mergeKLists2(ListNode[] lists) {
 
         PriorityQueue<ListNode> res = new PriorityQueue<ListNode>(10, (o1,o2) -> {
 
