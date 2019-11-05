@@ -39,6 +39,9 @@ public class StackForTwoQueue {
         res.push(5);
         System.out.print(res.pop()+ " ");
         System.out.print(res.pop()+" ");
+        Integer a = 100;
+        Integer b = 100;
+
     }
 }
 
