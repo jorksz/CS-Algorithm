@@ -85,7 +85,7 @@ public class ReverseNodesInKGroup {
 
 /**解题思路
  *
- * 们统计目前节点数量，如果到达k，就把当前k个结点reverse，
+ * 统计目前节点数量，如果到达k，就把当前k个结点reverse，
  * 这里需要reverse linked list的subroutine。
  * 这里我们需要先往前走，到达k的时候才做reverse，所以总体来说每个结点会被访问两次。
  * 总时间复杂度是O(2*n)=O(n)，空间复杂度是O(1)
