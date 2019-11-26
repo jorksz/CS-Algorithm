@@ -53,9 +53,58 @@ public class ValidParentheses {
         return stack.isEmpty();
     }
 
+
+
+
+
+
+
+
+    public static boolean isValid2(String s) {
+        if (s == null || s.length() == 0 ) {
+            return true;
+        }
+
+        if(s.length() == 1){
+            return false;
+        }
+
+        char[] characters = s.toCharArray();
+
+        Stack<Character> stack = new Stack<>();
+
+        for (int i = 0; i < characters.length; i++){
+            switch (characters[i]){
+                case '{':
+                case '(':
+                case '[':
+                    stack.push(characters[i]);
+                    break;
+                case '}' :
+                    if (stack.isEmpty() || stack.pop() != '{'){
+                        return false;
+                    }
+                    break;
+                case ')':
+                    if(stack.isEmpty() || stack.pop() != '('){
+                        return false;
+                    }
+                    break;
+                case ']':
+                    if(stack.isEmpty() || stack.pop() != '['){
+                        return false;
+                    }
+                    break;
+
+            }
+
+        }
+        return stack.isEmpty();
+    }
+
     public static void main(String[] args) {
-        String s = "{[]}{";
-        System.out.println(isValid(s));
+        String s = "(())";
+        System.out.println(isValid2(s));
     }
 }
 
