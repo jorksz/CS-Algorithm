@@ -25,9 +25,24 @@ public class RemoveElement {
         return len+1;
     }
 
+    public  static int removeElement2(int[] nums, int val) {
+        if(nums == null ||nums.length == 0){
+            return 0;
+        }
+
+        int i = 0;
+        for (int j = 0; j < nums.length; j++){
+            if (nums[j] != val){
+                nums[i++] = nums[j];
+            }
+        }
+
+        return i;
+    }
+
     public static void main(String[] args) {
-        int[] A = {1,2,3,4};
-        System.out.println(removeElement(A,1));
+        int[] A = {1,2,3};
+        System.out.println(removeElement2(A,1));
     }
 }
 
@@ -35,5 +50,9 @@ public class RemoveElement {
 /**
  *解题思路
  *
- * 扫描数组，当与目标数字相同的时候，从后面调一个数字进行替换
+ * 都是使用双指针来解决问题
+ * 第一种解决方式扫描数组，当与目标数字相同的时候，从后面调一个数字进行替换
+ *
+ * 第二中是从前面开始遍历，当数字相同的时候，用后面的数字覆盖掉target，但是这里返回的位置index并不需要+1，
+ * 上面那个解放从末尾需要+1
  */
