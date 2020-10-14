@@ -12,7 +12,6 @@ public class LinkedListCycle {
         if(head == null){
             return false;
         }
-
         ListNode slow = head;
         ListNode fast = head;
 

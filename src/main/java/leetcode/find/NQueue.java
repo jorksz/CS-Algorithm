@@ -1,6 +1,7 @@
 package leetcode.find;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -9,22 +10,20 @@ import java.util.ArrayList;
  */
 public class NQueue {
 
-    public ArrayList<String[]> solveNQueens(int n) {
-
-        if(n < 1){
+    public List<List<String>> solveNQueens(int n) {
+        if (n < 1){
             return new ArrayList<>();
         }
-
-        ArrayList<String[]> res = new ArrayList<>();
+        List<List<String>> res = new ArrayList<>();
         helper(n, 0, res, new int[n]);
         return res;
-
     }
 
-    private void helper(int n, int row, ArrayList<String[]> res, int[] colForRow) {
+    private void helper(int n, int row, List<List<String>> res, int[] colForRow) {
         String[] strings = new String[n];
         //如果当前行和n相等
         if(row == n){
+            List<String> temp = new ArrayList<>();
             for(int i = 0; i < n; i++){
                 StringBuilder stringBuilder = new StringBuilder();
 
@@ -38,9 +37,9 @@ public class NQueue {
                     }
 
                 }
-                strings[i] = stringBuilder.toString();
+                temp.add(stringBuilder.toString());
             }
-            res.add(strings);
+            res.add(temp);
             return;
         }
 
@@ -72,13 +71,7 @@ public class NQueue {
 
     public static void main(String[] args) {
         NQueue nQueue = new NQueue();
-        ArrayList<String[]> res = nQueue.solveNQueens(5);
-        for(String[] strings : res){
-            for(String string : strings){
-                System.out.println(string);
-            }
-            System.out.println();
-        }
+        List<List<String>> res = nQueue.solveNQueens(5);
     }
 }
 
