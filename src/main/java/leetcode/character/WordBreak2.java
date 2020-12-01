@@ -2,6 +2,7 @@ package leetcode.character;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -17,38 +18,27 @@ import java.util.Set;
 
 public class WordBreak2 {
 
-    /**
-     * 递归
-     * 牛客网 输出顺序不一样，不能过，LeetCode能过
-     * @param s
-     * @param dict
-     * @return
-     */
-    public ArrayList<String> wordBreak(String s, Set<String> dict) {
+    public List<String> wordBreak(String s, List<String> wordDict) {
         ArrayList<String> res = new ArrayList<>();
         if(s == null || s.length() == 0){
             return res;
         }
-
-
-        helper(res, s, 0, dict, "");
-
+        helper(res, s, 0, wordDict, "");
         return res;
     }
 
-    private void helper(ArrayList<String> res, String s, int start, Set<String> dict, String str) {
-        if( start == s.length()){
+    private void helper(ArrayList<String> res, String s, int start, List<String> wordDict, String str) {
+        if(start == s.length()) {
             res.add(str);
-            return;
         }
         else {
             StringBuilder stringBuilder = new StringBuilder();
             for(int i = start; i < s.length(); i++){
                 stringBuilder.append(s.charAt(i));
-                if(dict.contains(stringBuilder.toString())){
+                if(wordDict.contains(stringBuilder.toString())){
                     String tempStr = str.length() > 0 ?
                             (str + " " + stringBuilder.toString()) : stringBuilder.toString();
-                    helper(res, s, i+1, dict, tempStr);
+                    helper(res, s, i+1, wordDict, tempStr);
                 }
             }
         }
@@ -62,7 +52,7 @@ public class WordBreak2 {
      * @param dict
      * @return
      */
-    public ArrayList<String> wordBreak2(String s, Set<String> dict) {
+    public ArrayList<String> wordBreak2(String s, List<String> dict) {
         ArrayList<String> res = new ArrayList<>();
         if(s == null || s.length() == 0){
             return res;
@@ -82,7 +72,7 @@ public class WordBreak2 {
      * @param dict
      * @param str
      */
-    private void helper2(ArrayList<String> res, String s, int start, Set<String> dict, String str) {
+    private void helper2(ArrayList<String> res, String s, int start, List<String> dict, String str) {
         if(start <= 0){
             if(str.length() > 0){
                 res.add(str.substring(0, str.length() - 1));
@@ -98,7 +88,7 @@ public class WordBreak2 {
 
     public static void main(String[] args) {
         WordBreak2 wordBreak2 = new WordBreak2();
-        Set<String> dict = new HashSet<>();
+        List<String> dict = new ArrayList<>();
         dict.add("cat");
         dict.add("cats");
         dict.add("and");
