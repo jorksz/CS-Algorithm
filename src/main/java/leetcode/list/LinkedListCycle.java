@@ -6,6 +6,7 @@ package leetcode.list;
  * 判断给定的链表中是否有环
  * 扩展：
  * 你能给出不利用额外空间的解法么？
+ * @author lijt
  */
 public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {
