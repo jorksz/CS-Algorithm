@@ -5,7 +5,7 @@ import java.util.*;
 public class CountofSmallerNumbersAfterSelf {
 
     public List<Integer> countSmaller(int[] nums) {
-        if (nums.length == 0 || nums == null){
+        if (nums.length == 0){
             return new ArrayList<>();
         }
 
