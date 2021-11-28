@@ -1,6 +1,4 @@
-package leetcode.half;
-
-import com.sun.jmx.snmp.SnmpUnknownMsgProcModelException;
+package leetcode.bisearch;
 
 /**
  * @author lijt
@@ -28,5 +26,17 @@ public class MissingNumber {
         int[] nums = {0,1,2,3,5};
         MissingNumber missingNumber = new MissingNumber();
         System.out.println(missingNumber.missingNumber(nums));
+
+
+        String str = "abc";
+        String str2 = new String("abc");
+        String str3 = str.intern();
+        String str4= str2.intern();
+        System.out.println(str == str2);
+        System.out.println(str == str3);
+        System.out.println(str2 == str3);
+        System.out.println(str == str4.intern());
+
+
     }
 }
